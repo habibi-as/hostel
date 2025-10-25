@@ -10,15 +10,20 @@ const nodemailer = require('nodemailer');
 const router = express.Router();
 
 // Email transporter
-const transporter = nodemailer.createTransporter({
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: process.env.EMAIL_PORT,
-  secure: false,
+  secure: false, // true if using port 465
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   }
 });
+
+module.exports = transporter;
+
 
 // Register
 router.post('/register', [
