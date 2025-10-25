@@ -10,7 +10,7 @@ const nodemailer = require('nodemailer');
 const router = express.Router();
 
 // Email transporter
-const nodemailer = require('nodemailer');
+
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
